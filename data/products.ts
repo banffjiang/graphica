@@ -4,6 +4,7 @@ export interface Product {
   description: string
   image: string
   printifyId?: string // For future Printify API integration
+  etsyUrl?: string
 }
 
 export const products: Product[] = [
@@ -11,7 +12,8 @@ export const products: Product[] = [
     id: 1,
     name: "Moraine Lake at Dawn",
     description: "1000-piece archival puzzle capturing the lake's iconic turquoise waters",
-    image: "/puzzle.png"
+    image: "/puzzle.png",
+    etsyUrl: "https://www.etsy.com/listing/4403256301/sunset-mountain-moraine-lake-puzzle-110?sr_prefetch=1&pf_from=shop_home&ref=shop_home_active_1&logging_key=acde8d2e2a90b8585681ee48eddaf0c38cd7439b%3A4403256301"
   },
   {
     id: 2,

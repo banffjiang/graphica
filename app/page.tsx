@@ -7,11 +7,11 @@ import { Compass, Layers, Globe } from 'lucide-react';
 type Product = { id: number; name: string; description: string; image: string };
 const products: Product[] = [
   { id: 1, name: 'Moraine Lake at Dawn', description: "1000-piece archival puzzle capturing the lake's iconic turquoise waters", image: '/puzzle.png' },
-  { id: 2, name: 'Alpine Horizon', description: 'Minimalist ceramic drinkware featuring the Canadian Rockies silhouette', image: '/cup.png' },
-  { id: 3, name: 'Serenity in Stone', description: "Gallery-quality acrylic print of Moraine Lake's timeless beauty", image: '/tote.png' },
-  { id: 4, name: 'Serenity in Stone', description: 'Fine art canvas capturing the dramatic peaks of Banff National Park', image: '/shirt.png' },
-  { id: 5, name: 'Glacial Blue', description: 'Premium textile collection featuring subtle alpine colorways', image: '/white_shirt.png' },
-  { id: 6, name: 'Reflections', description: 'Limited edition print series of mirror-still mountain lakes', image: '/acr.png' },
+  { id: 2, name: 'Alpine Horizon', description: "Ceramic mug with a wraparound Moraine Lake print, ideal for coffee, tea, or hot chocolate.", image: '/cup.png' },
+  { id: 3, name: 'Seasons of Banff Tote', description: "Reusable canvas tote bag featuring a warm autumn Banff landscape—perfect for markets, books, and everyday carry.", image: '/tote.png' },
+  { id: 4, name: 'Summit Tee', description: "Soft natural-tone unisex tee featuring a full-color Moraine Lake illustration on the back. (Multiple Colors)", image: '/shirt.png' },
+  { id: 5, name: 'Glacial Blue', description: "Classic unisex t-shirt with a vibrant Lake Louise print, inspired by turquoise glacier water. (Multiple Colors)", image: '/white_shirt.png' },
+  { id: 6, name: 'Reflections', description: "Glossy acrylic wall art panel of Moraine Lake, ready to hang with a clean, modern floating look.", image: '/acr.png' },
 ];
 
 function Navbar() {
@@ -70,7 +70,7 @@ function Hero() {
     <section className="relative min-h-screen flex items-center justify-center bg-neutral-900">
       <div
         className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=1920&h=1080&fit=crop)' }}
+        style={{ backgroundImage: 'url(/banff.jpg)' }}
       />
       <div className="absolute inset-0 bg-gradient-to-b from-neutral-900/70 via-neutral-900/80 to-neutral-900/90" />
 
@@ -90,7 +90,7 @@ function Hero() {
         </button>
 
         <p className="mt-16 text-xs text-neutral-500 tracking-wide">
-          Designed by GraphicaByBanff · Printed &amp; fulfilled via Printify
+          Designed by GraphicaByBanff · Est.2004
         </p>
       </div>
     </section>
@@ -131,7 +131,7 @@ function About() {
           <div className="space-y-6 text-lg text-neutral-700 leading-relaxed">
             <p>GraphicaByBanff is a studio practice dedicated to capturing the essence of Banff National Park and Moraine Lake through thoughtfully composed designs.</p>
             <p>Each piece is created with an emphasis on realism and restraint, celebrating the quiet grandeur of the Canadian Rockies. Our work is intended for those who appreciate considered design and wish to bring moments of alpine serenity into their daily lives.</p>
-            <p>We believe in sustainable production. Every item is made-to-order through trusted print partners, ensuring quality without waste or excess inventory.</p>
+            <p>We believe in sustainable production. Every item is made-to-order and we ensure quality without waste or excess inventory.</p>
           </div>
         </div>
       </div>
@@ -163,7 +163,7 @@ function Process() {
           ))}
         </div>
 
-        <p className="text-center text-sm text-neutral-500 mt-16">We partner with Printify to ensure consistent quality and reliable fulfillment.</p>
+        
       </div>
     </section>
   );
