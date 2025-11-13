@@ -4,14 +4,75 @@ import { useState, useEffect } from 'react';
 import { Compass, Layers, Globe } from 'lucide-react';
 
 // Product data
-type Product = { id: number; name: string; description: string; image: string };
+type Product = {
+  id: number;
+  name: string;
+  description: string;
+  image: string;
+  longDescription: string;
+  etsyUrl: string;
+};
+
 const products: Product[] = [
-  { id: 1, name: 'Moraine Lake at Dawn', description: "1000-piece archival puzzle capturing the lake's iconic turquoise waters", image: '/puzzle.png' },
-  { id: 2, name: 'Alpine Horizon', description: "Ceramic mug with a wraparound Moraine Lake print, ideal for coffee, tea, or hot chocolate.", image: '/cup.png' },
-  { id: 3, name: 'Seasons of Banff Tote', description: "Reusable canvas tote bag featuring a warm autumn Banff landscape—perfect for markets, books, and everyday carry.", image: '/tote.png' },
-  { id: 4, name: 'Summit Tee', description: "Soft natural-tone unisex tee featuring a full-color Moraine Lake illustration on the back. (Multiple Colors)", image: '/shirt.png' },
-  { id: 5, name: 'Glacial Blue', description: "Classic unisex t-shirt with a vibrant Lake Louise print, inspired by turquoise glacier water. (Multiple Colors)", image: '/white_shirt.png' },
-  { id: 6, name: 'Reflections', description: "Glossy acrylic wall art panel of Moraine Lake, ready to hang with a clean, modern floating look.", image: '/acr.png' },
+  {
+    id: 1,
+    name: 'Moraine Lake at Dawn',
+    description: "1000-piece archival puzzle capturing the lake's iconic turquoise waters",
+    image: '/puzzle.png',
+    longDescription:
+      'A 1000-piece premium chipboard puzzle featuring a detailed Moraine Lake illustration. The rich blues and warm alpine light make it perfect for slow evenings, date nights, or quiet solo time. Designed to be framed after completion if you want to turn your progress into wall art.',
+    etsyUrl: 'https://www.etsy.com/listing/4403256301/sunset-mountain-moraine-lake-puzzle-110?sr_prefetch=1&pf_from=shop_home&ref=shop_home_active_1&logging_key=acde8d2e2a90b8585681ee48eddaf0c38cd7439b%3A4403256301'
+  },
+  {
+    id: 2,
+    name: 'Alpine Horizon',
+    description:
+      'Ceramic mug with a wraparound Moraine Lake print, ideal for coffee, tea, or hot chocolate.',
+    image: '/cup.png',
+    longDescription:
+      'A classic ceramic mug featuring a wraparound Moraine Lake scene, printed in crisp, true-to-color detail. The design brings a bit of Banff to every morning routine, whether it’s coffee, tea, or hot chocolate. Durable, glossy, and dishwasher-safe for easy everyday use.',
+    etsyUrl: 'https://www.etsy.com/listing/4402881480/moraine-lake-mug-banff-national-park?sr_prefetch=1&pf_from=shop_home&ref=shop_home_active_2&logging_key=fd02717a13c1fee751ff01dbba253d1be90b1a0d%3A4402881480'
+  },
+  {
+    id: 3,
+    name: 'Seasons of Banff Tote',
+    description:
+      'Reusable canvas tote bag featuring a warm autumn Banff landscape—perfect for markets, books, and everyday carry.',
+    image: '/tote.png',
+    longDescription:
+      'A sturdy canvas tote showcasing an autumn Banff landscape, with warm tones that pair well with everyday outfits. Ideal for farmers’ markets, campus days, bookstore trips, or travel carry-ons. Folds flat but holds its structure when in use, making it both practical and artful.',
+    etsyUrl: 'https://www.etsy.com/listing/TOTE_PLACEHOLDER'
+  },
+  {
+    id: 4,
+    name: 'Summit Tee',
+    description:
+      'Soft natural-tone unisex tee featuring a full-color Moraine Lake illustration on the back. (Multiple Colors)',
+    image: '/shirt.png',
+    longDescription:
+      'A soft, unisex tee in a natural tone with a bold Moraine Lake back print. Designed to feel like a favorite shirt from the first wear, it pairs easily with denim, leggings, or layered under a jacket. Offered in multiple colors to match different styles while keeping the same alpine artwork.',
+    etsyUrl: 'https://www.etsy.com/listing/SUMMIT_TEE_PLACEHOLDER'
+  },
+  {
+    id: 5,
+    name: 'Glacial Blue',
+    description:
+      'Classic unisex t-shirt with a vibrant Lake Louise print, inspired by turquoise glacier water. (Multiple Colors)',
+    image: '/white_shirt.png',
+    longDescription:
+      'A crisp unisex tee centered around a Lake Louise-inspired print, with cool glacier blues that stand out on a clean base. The design balances minimal typography with a scenic illustration, making it wearable both as casual streetwear and as a souvenir-style piece.',
+    etsyUrl: 'https://www.etsy.com/listing/GLACIAL_BLUE_TEE_PLACEHOLDER'
+  },
+  {
+    id: 6,
+    name: 'Reflections',
+    description:
+      'Glossy acrylic wall art panel of Moraine Lake, ready to hang with a clean, modern floating look.',
+    image: '/acr.png',
+    longDescription:
+      'A glossy acrylic wall panel that showcases Moraine Lake with deep contrast and glass-like clarity. The floating look adds a gallery-style finish, perfect for living rooms, offices, or stairway walls. Lightweight yet striking, it’s designed to be a focal point in any space.',
+    etsyUrl: 'https://www.etsy.com/listing/ACRYLIC_WALL_ART_PLACEHOLDER'
+  }
 ];
 
 function Navbar() {
@@ -29,7 +90,13 @@ function Navbar() {
   };
 
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-500 ${scrolled ? 'bg-neutral-900/95 backdrop-blur-md border-b border-neutral-800' : 'bg-transparent'}`}>
+    <nav
+      className={`fixed w-full z-50 transition-all duration-500 ${
+        scrolled
+          ? 'bg-neutral-900/95 backdrop-blur-md border-b border-neutral-800'
+          : 'bg-transparent'
+      }`}
+    >
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <div className="flex justify-between items-center h-20">
           <button
@@ -76,10 +143,13 @@ function Hero() {
 
       <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
         <h1 className="font-serif text-5xl sm:text-6xl lg:text-7xl text-neutral-100 mb-6 leading-tight tracking-tight">
-          Banff-Inspired Art for<br />Considered Spaces
+          Banff-Inspired Art for
+          <br />
+          Considered Spaces
         </h1>
         <p className="text-lg sm:text-xl text-neutral-300 mb-12 max-w-2xl mx-auto leading-relaxed">
-          A curated collection of Moraine Lake and Canadian Rockies designs across puzzles, drinkware, and wall art.
+          A curated collection of Moraine Lake and Canadian Rockies designs across puzzles,
+          drinkware, and wall art.
         </p>
 
         <button
@@ -98,26 +168,99 @@ function Hero() {
 }
 
 function Collection() {
+  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
+
   return (
     <section id="collection" className="py-24 bg-neutral-50">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <div className="text-center mb-20">
-          <h2 className="font-serif text-4xl sm:text-5xl text-neutral-900 mb-4 tracking-tight">Signature Collection</h2>
-          <p className="text-neutral-600 text-lg max-w-2xl mx-auto">Each piece captures the quiet majesty of the Canadian Rockies</p>
+          <h2 className="font-serif text-4xl sm:text-5xl text-neutral-900 mb-4 tracking-tight">
+            Signature Collection
+          </h2>
+          <p className="text-neutral-600 text-lg max-w-2xl mx-auto">
+            Each piece captures the quiet majesty of the Canadian Rockies
+          </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
           {products.map((product) => (
-            <div key={product.id} className="group">
+            <button
+              key={product.id}
+              type="button"
+              onClick={() => setSelectedProduct(product)}
+              className="group text-left"
+            >
               <div className="relative overflow-hidden bg-neutral-200 mb-6 aspect-[4/5]">
-                <img src={product.image} alt={product.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                <img
+                  src={product.image}
+                  alt={product.name}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                />
               </div>
               <h3 className="font-serif text-2xl text-neutral-900 mb-2">{product.name}</h3>
               <p className="text-neutral-600 leading-relaxed">{product.description}</p>
-            </div>
+            </button>
           ))}
         </div>
       </div>
+
+      {/* Product detail overlay */}
+      {selectedProduct && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 px-4">
+          <div className="bg-white max-w-lg w-full p-6 sm:p-8 shadow-2xl relative">
+            {/* Top-right X close button */}
+            <button
+              type="button"
+              onClick={() => setSelectedProduct(null)}
+              className="absolute right-4 top-4 text-xl leading-none text-neutral-500 hover:text-neutral-900"
+              aria-label="Close"
+            >
+              &times;
+            </button>
+
+            <div className="mb-6">
+              <div className="w-full mb-4 overflow-hidden bg-neutral-100 aspect-[4/3]">
+                <img
+                  src={selectedProduct.image}
+                  alt={selectedProduct.name}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <h3 className="font-serif text-2xl sm:text-3xl text-neutral-900 mb-3">
+                {selectedProduct.name}
+              </h3>
+              <p className="text-neutral-700 leading-relaxed mb-4">
+                {selectedProduct.longDescription}
+              </p>
+              <p className="text-sm text-neutral-500">
+                {selectedProduct.description}
+              </p>
+            </div>
+
+            <div className="flex flex-col sm:flex-row gap-3 sm:items-center sm:justify-between">
+              {/* View on Etsy (primary) */}
+              <a
+                href={selectedProduct.etsyUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex justify-center px-6 py-3 bg-neutral-900 text-neutral-100 text-sm tracking-wider uppercase hover:bg-neutral-800 transition-colors"
+              >
+                View on Etsy
+              </a>
+
+              {/* Buy Now button – also goes to the same Etsy listing */}
+              <a
+                href={selectedProduct.etsyUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex justify-center px-6 py-3 border border-neutral-900 text-neutral-900 text-sm tracking-wider uppercase hover:bg-neutral-900 hover:text-neutral-50 transition-colors"
+              >
+                Buy Now
+              </a>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 }
@@ -129,9 +272,19 @@ function About() {
         <div className="border-l-2 border-amber-600/20 pl-8">
           <h2 className="font-serif text-4xl text-neutral-900 mb-8 tracking-tight">About the Studio</h2>
           <div className="space-y-6 text-lg text-neutral-700 leading-relaxed">
-            <p>GraphicaByBanff is a studio practice dedicated to capturing the essence of Banff National Park and Moraine Lake through thoughtfully composed designs.</p>
-            <p>Each piece is created with an emphasis on realism and restraint, celebrating the quiet grandeur of the Canadian Rockies. Our work is intended for those who appreciate considered design and wish to bring moments of alpine serenity into their daily lives.</p>
-            <p>We believe in sustainable production. Every item is made-to-order and we ensure quality without waste or excess inventory.</p>
+            <p>
+              GraphicaByBanff is a studio practice dedicated to capturing the essence of Banff National
+              Park and Moraine Lake through thoughtfully composed designs.
+            </p>
+            <p>
+              Each piece is created with an emphasis on realism and restraint, celebrating the quiet
+              grandeur of the Canadian Rockies. Our work is intended for those who appreciate considered
+              design and wish to bring moments of alpine serenity into their daily lives.
+            </p>
+            <p>
+              We believe in sustainable production. Every item is made-to-order and we ensure quality
+              without waste or excess inventory.
+            </p>
           </div>
         </div>
       </div>
@@ -156,14 +309,14 @@ function Process() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16">
           {steps.map((step, i) => (
             <div key={i} className="text-center">
-              <div className="inline-flex items-center justify-center w-16 h-16 border border-amber-600/30 text-amber-200 mb-6">{step.icon}</div>
+              <div className="inline-flex items-center justify-center w-16 h-16 border border-amber-600/30 text-amber-200 mb-6">
+                {step.icon}
+              </div>
               <h3 className="text-xl font-medium mb-3 tracking-wide">{step.title}</h3>
               <p className="text-neutral-400 leading-relaxed">{step.description}</p>
             </div>
           ))}
         </div>
-
-        
       </div>
     </section>
   );
@@ -185,14 +338,23 @@ function Contact() {
     <section id="contact" className="py-24 bg-neutral-50">
       <div className="max-w-3xl mx-auto px-6 lg:px-12">
         <div className="text-center mb-16">
-          <h2 className="font-serif text-4xl sm:text-5xl text-neutral-900 mb-4 tracking-tight">Get In Touch</h2>
-          <p className="text-neutral-600 text-lg">For inquiries, custom commissions, or wholesale opportunities</p>
+          <h2 className="font-serif text-4xl sm:text-5xl text-neutral-900 mb-4 tracking-tight">
+            Get In Touch
+          </h2>
+          <p className="text-neutral-600 text-lg">
+            For inquiries, custom commissions, or wholesale opportunities
+          </p>
         </div>
 
         <div className="bg-white border border-neutral-200 p-8 lg:p-12">
           <div className="space-y-6">
             <div>
-              <label htmlFor="name" className="block text-sm uppercase tracking-wider text-neutral-700 mb-2">Name</label>
+              <label
+                htmlFor="name"
+                className="block text-sm uppercase tracking-wider text-neutral-700 mb-2"
+              >
+                Name
+              </label>
               <input
                 type="text"
                 id="name"
@@ -203,7 +365,12 @@ function Contact() {
             </div>
 
             <div>
-              <label htmlFor="email" className="block text-sm uppercase tracking-wider text-neutral-700 mb-2">Email</label>
+              <label
+                htmlFor="email"
+                className="block text-sm uppercase tracking-wider text-neutral-700 mb-2"
+              >
+                Email
+              </label>
               <input
                 type="email"
                 id="email"
@@ -214,7 +381,12 @@ function Contact() {
             </div>
 
             <div>
-              <label htmlFor="message" className="block text-sm uppercase tracking-wider text-neutral-700 mb-2">Message</label>
+              <label
+                htmlFor="message"
+                className="block text-sm uppercase tracking-wider text-neutral-700 mb-2"
+              >
+                Message
+              </label>
               <textarea
                 id="message"
                 value={formData.message}
@@ -224,7 +396,10 @@ function Contact() {
               />
             </div>
 
-            <button onClick={handleSubmit} className="w-full px-10 py-4 bg-neutral-900 text-neutral-100 text-sm tracking-wider uppercase hover:bg-neutral-800 transition-colors">
+            <button
+              onClick={handleSubmit}
+              className="w-full px-10 py-4 bg-neutral-900 text-neutral-100 text-sm tracking-wider uppercase hover:bg-neutral-800 transition-colors"
+            >
               Send Message
             </button>
           </div>
@@ -260,12 +435,17 @@ function Footer() {
             >
               Pinterest
             </a>
-            <a href="mailto:contact@graphicabybanff.com" className="hover:text-neutral-100 transition-colors">
+            <a
+              href="mailto:contact@graphicabybanff.com"
+              className="hover:text-neutral-100 transition-colors"
+            >
               Email
             </a>
           </div>
 
-          <div className="text-xs text-neutral-600">© {currentYear} GraphicaByBanff. All rights reserved.</div>
+          <div className="text-xs text-neutral-600">
+            © {currentYear} GraphicaByBanff. All rights reserved.
+          </div>
         </div>
       </div>
     </footer>
