@@ -41,7 +41,7 @@ const products: Product[] = [
     image: '/tote.png',
     longDescription:
       'A sturdy canvas tote showcasing an autumn Banff landscape, with warm tones that pair well with everyday outfits. Ideal for farmers’ markets, campus days, bookstore trips, or travel carry-ons. Folds flat but holds its structure when in use, making it both practical and artful.',
-    etsyUrl: 'https://www.etsy.com/listing/TOTE_PLACEHOLDER'
+    etsyUrl: 'https://www.etsy.com/listing/4402859832/banff-spring-mountain-village-tote-bag?ref=shop_home_feat_1&sr_prefetch=1&pf_from=shop_home&logging_key=3d9aa368e85965e25ff93f246db9a7f6254ecdcd%3A4402859832'
   },
   {
     id: 4,
@@ -51,7 +51,7 @@ const products: Product[] = [
     image: '/shirt.png',
     longDescription:
       'A soft, unisex tee in a natural tone with a bold Moraine Lake back print. Designed to feel like a favorite shirt from the first wear, it pairs easily with denim, leggings, or layered under a jacket. Offered in multiple colors to match different styles while keeping the same alpine artwork.',
-    etsyUrl: 'https://www.etsy.com/listing/SUMMIT_TEE_PLACEHOLDER'
+    etsyUrl: 'https://www.etsy.com/listing/4402873110/moraine-lake-landscape-t-shirt-mountain?sr_prefetch=1&pf_from=shop_home&ref=shop_home_active_4&frs=1&logging_key=91db84d20980faf01a64fefa3bfade856ae4465f%3A4402873110'
   },
   {
     id: 5,
@@ -61,7 +61,7 @@ const products: Product[] = [
     image: '/white_shirt.png',
     longDescription:
       'A crisp unisex tee centered around a Lake Louise-inspired print, with cool glacier blues that stand out on a clean base. The design balances minimal typography with a scenic illustration, making it wearable both as casual streetwear and as a souvenir-style piece.',
-    etsyUrl: 'https://www.etsy.com/listing/GLACIAL_BLUE_TEE_PLACEHOLDER'
+    etsyUrl: 'https://www.etsy.com/listing/4402866004/lake-louise-poster-tee-banff-national?sr_prefetch=1&pf_from=shop_home&ref=shop_home_active_5&frs=1&logging_key=bcfd5e8283bbae9a8037e939c071f451cf8103c9%3A4402866004'
   },
   {
     id: 6,
@@ -71,7 +71,7 @@ const products: Product[] = [
     image: '/acr.png',
     longDescription:
       'A glossy acrylic wall panel that showcases Moraine Lake with deep contrast and glass-like clarity. The floating look adds a gallery-style finish, perfect for living rooms, offices, or stairway walls. Lightweight yet striking, it’s designed to be a focal point in any space.',
-    etsyUrl: 'https://www.etsy.com/listing/ACRYLIC_WALL_ART_PLACEHOLDER'
+    etsyUrl: 'https://www.etsy.com/listing/4402885927/sunlit-mountain-lake-acrylic-wall-art?sr_prefetch=1&pf_from=shop_home&ref=shop_home_active_3&logging_key=cb0f4f6b35b7e4c55d30cd3d3385dc2599b7c5d3%3A4402885927'
   }
 ];
 
