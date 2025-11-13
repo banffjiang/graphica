@@ -11,13 +11,13 @@ export const products: Product[] = [
     id: 1,
     name: "Moraine Lake at Dawn",
     description: "1000-piece archival puzzle capturing the lake's iconic turquoise waters",
-    image: "https://images.unsplash.com/photo-1504893524553-b855bce32c67?w=800&h=1000&fit=crop"
+    image: "puzzle.png"
   },
   {
     id: 2,
     name: "Alpine Horizon",
     description: "Minimalist ceramic drinkware featuring the Canadian Rockies silhouette",
-    image: "https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=800&h=1000&fit=crop"
+    image: "cup.png"
   },
   {
     id: 3,
